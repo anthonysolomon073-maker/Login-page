@@ -1,103 +1,203 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>login form page </title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Form Page</title>
     <style>
-        label{
-           display: block;
-           margin-left: -45%;
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
-        .form-box input {
-        border-radius: 20px;
-        width: 300px;
-        height: 20px;
-        padding: 10px;
-        
 
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 0;
+            padding: 0;
         }
-        h2{
-            color: skyblue;
+
+        .form-box {
+            background-color: blueviolet;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
         }
-        input[type="checkbox"] {
-            width: auto;
-            margin-left: -45%;
-            display: inline;
-            
-        }
-        form{
+
+        form {
             background-color: white;
             display: flex;
             flex-direction: column;
             align-items: center;
-            padding: 30px;
-            width: 400px;
-            height: 400px;
+            padding: 40px 30px;
+            width: 100%;
+            max-width: 450px;
             border-radius: 20px;
-        
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
         }
-        button{
+
+        h2 {
+            color: skyblue;
+            font-size: 28px;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        label {
+            display: block;
+            width: 100%;
+            text-align: left;
+            margin-bottom: 8px;
+            font-weight: bold;
+            color: #333;
+            font-size: 14px;
+        }
+
+        input[type="text"],
+        input[type="password"] {
+            width: 100%;
+            padding: 12px 15px;
+            border-radius: 20px;
+            border: 1px solid #ddd;
+            font-size: 14px;
+            margin-bottom: 20px;
+            outline: none;
+            transition: border-color 0.3s;
+        }
+
+        input[type="text"]:focus,
+        input[type="password"]:focus {
+            border-color: skyblue;
+        }
+
+        .remember-me {
+            display: flex;
+            align-items: center;
+            width: 100%;
+            margin-bottom: 25px;
+            font-size: 14px;
+            color: gray;
+        }
+
+        .remember-me input[type="checkbox"] {
+            width: 16px;
+            height: 16px;
+            margin-right: 8px;
+            cursor: pointer;
+        }
+
+        .remember-me label {
+            margin: 0;
+            cursor: pointer;
+            font-weight: normal;
+        }
+
+        button {
             background-color: skyblue;
-            width: 300px;
-            padding: 10px;
+            width: 100%;
+            padding: 12px;
             border-radius: 30px;
             color: white;
+            font-size: 16px;
+            font-weight: bold;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s;
         }
-        
-        .form-box{
-            background-color: blueviolet;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            padding: 30px;
-            height: 500px;
+
+        button:hover {
+            background-color: #87ceeb;
         }
-        p{
+
+        button:active {
+            transform: scale(0.98);
+        }
+
+        .footer-links {
             display: flex;
+            justify-content: space-between;
+            width: 100%;
+            margin-top: 20px;
+            font-size: 14px;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .footer-links a {
             color: skyblue;
-            
-         }
-         .remember-me{
-      display:flex;
-      font-size: 14px;
-      color: gray;
-      margin-top: -4px;
-      margin-left: -20%;
-    }
-    .remember-me input {
-      width: 12px;
-      height: 10px;
-    }
-    .remember-me label{
-      margin-left: 0px;
-      cursor: pointer;
-      margin-top: -0px;
-      display: flex;
-    }
-        
-        
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .footer-links a:hover {
+            text-decoration: underline;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 480px) {
+            form {
+                padding: 30px 20px;
+            }
+
+            h2 {
+                font-size: 24px;
+                margin-bottom: 25px;
+            }
+
+            input[type="text"],
+            input[type="password"] {
+                padding: 10px 12px;
+                font-size: 13px;
+            }
+
+            button {
+                padding: 10px;
+                font-size: 15px;
+            }
+
+            .footer-links {
+                flex-direction: column;
+                text-align: center;
+                gap: 8px;
+            }
+        }
+
+        @media (max-width: 360px) {
+            form {
+                padding: 25px 15px;
+            }
+
+            h2 {
+                font-size: 22px;
+            }
+        }
     </style>
 </head>
 <body>
     <div class="form-box">
-     <form>
-           <H2>LOGIN  Now</H2> 
-        <label for="name">username*</label>
-        <div class="">
-
-        </div>
-        <input type="text" id="name" placeholder="Enter Your username"><br>
-        <label for=" pass"> password*</label>
-        <input type="password" id="pass" placeholder="Enter Your Password"><br>
-          <div class="remember-me">
-            <input type="checkbox">
-             <label for="rememberme">Remember me</label><br>
-          </div><br>
-          <button type="submit">LOGIN</button><br>
-          <p>dont have an account? &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;     
-            forget password?</p> 
-     </form>
-    
+        <form>
+            <h2>LOGIN Now</h2>
+            
+            <label for="name">Username*</label>
+            <input type="text" id="name" placeholder="Enter Your Username" required>
+            
+            <label for="pass">Password*</label>
+            <input type="password" id="pass" placeholder="Enter Your Password" required>
+            
+            <div class="remember-me">
+                <input type="checkbox" id="rememberme">
+                <label for="rememberme">Remember me</label>
+            </div>
+            
+            <button type="submit">LOGIN</button>
+            
+            <div class="footer-links">
+                <a href="#">Don't have an account?</a>
+                <a href="#">Forget password?</a>
+            </div>
+        </form>
     </div>
 </body>
 </html>
